@@ -259,7 +259,7 @@ dataset_name: ''
 eval_dataset_name: ''
 eval_split: ''
 # for HuggingFace input pipeline (dataset_type=hf)
-hf_path: ''
+hf_path: 'parquet'
 hf_data_dir: ''
 hf_train_files: ''
 hf_eval_split: ''
