@@ -91,7 +91,7 @@ save_quantized_params_path: ""
 # Shard the range finding operation for quantization. By default this is set to number of slices.
 quantization_local_shard_count: -1
 
-decoder_block: "llama2" # which style of DecoderBlock to use.
+decoder_block: "gemma2" # which style of DecoderBlock to use.
 # Global parameter scale needs to be a power of 2. If you want finer grained control of the model sizes
 # then you should explicitly set base_embed_dim, base_num_query_heads, base_num_kv_heads,
 # base_mlp_dim, base_num_decoder_layers and/or head_dim.
@@ -137,7 +137,7 @@ param_scan_axis: 1
 
 # The attention parameter dictates the specific algorithm/methodology used to compute the attention scores
 # The attention_type parameter determines the variants of attention, e.g. global or local_sliding
-attention: 'autoselected' # Supported attention: autoselected, dot_product, flash, cudnn_flash_te
+attention: 'dot_product' # Supported attention: autoselected, dot_product, flash, cudnn_flash_te
 attention_type: 'global' # Supported attention_type: global, local_sliding
 sliding_window_size: 0
 attn_logits_soft_cap: 0.0
@@ -252,11 +252,11 @@ train_data_column: 'text'
 eval_data_column: 'text'
 # dataset_type must be synthetic, hf, grain, tfds
 # details in: https://github.com/google/maxtext/blob/main/getting_started/Data_Input_Pipeline.md
-dataset_type: tfds
+dataset_type: hf
 # for TFDS input pipeline (dataset_type=tfds)
-dataset_path: "" # your path given as argument in download_dataset.sh, e.g. "gs://my-maxtext-dataset/"
-dataset_name: 'c4/en:3.0.1'
-eval_dataset_name: 'c4/en:3.0.1'
+dataset_path: "parquet" # your path given as argument in download_dataset.sh, e.g. "gs://my-maxtext-dataset/"
+dataset_name: ''
+eval_dataset_name: ''
 eval_split: 'validation'
 # for HuggingFace input pipeline (dataset_type=hf)
 hf_path: ''
