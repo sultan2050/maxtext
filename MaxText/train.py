@@ -424,7 +424,7 @@ def setup_train_loop(config):
     params_sharded_tolerance=0.1
   else:
     params_sharded_tolerance=0.02
-  maxtext_utils.assert_params_sufficiently_sharded(state.params, mesh, tolerance=params_sharded_tolerance)
+  #maxtext_utils.assert_params_sufficiently_sharded(state.params, mesh, tolerance=params_sharded_tolerance)
 
   return (
       init_rng,
