@@ -21,7 +21,6 @@ base_mlp_dim: 36864
 base_num_decoder_layers: 23 # half of the real number of layers because we merge [local_attention, global_attention] into one layer 
 head_dim: 128
 mlp_activations: ["gelu","linear"]
-vocab_size: 32000
 decoder_block: "gemma2"
 normalization_layer_epsilon: 1.e-06
 logits_via_embedding: True
