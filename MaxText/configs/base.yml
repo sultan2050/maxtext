@@ -275,7 +275,7 @@ ici_expert_parallelism: 1
 num_slices: -1
 
 # Tokenizer
-vocab_size: 32_000 # powers of 2 for sharding
+vocab_size: 128256 # powers of 2 for sharding
 tokenizer_path: "assets/tokenizer.llama2"
 tokenize_train_data: True  # False if the dataset is pre-tokenized
 tokenize_eval_data: True  # False if the dataset is pre-tokenized
@@ -291,14 +291,14 @@ train_data_column: 'text'
 eval_data_column: 'text'
 # dataset_type must be synthetic, hf, grain, tfds
 # details in: https://github.com/google/maxtext/blob/main/getting_started/Data_Input_Pipeline.md
-dataset_type: tfds
+dataset_type: hf
 # for TFDS input pipeline (dataset_type=tfds)
 dataset_path: "" # your path given as argument in download_dataset.sh, e.g. "gs://my-maxtext-dataset/"
-dataset_name: 'c4/en:3.0.1'
-eval_dataset_name: 'c4/en:3.0.1'
-eval_split: 'validation'
+dataset_name: ''
+eval_dataset_name: ''
+eval_split: ''
 # for HuggingFace input pipeline (dataset_type=hf)
-hf_path: ''
+hf_path: 'parquet'
 hf_data_dir: ''
 hf_train_files: ''
 hf_eval_split: ''
@@ -310,7 +310,7 @@ grain_eval_files: ''
 grain_worker_count: 1
 
 # Training loop
-steps: 150_001 # If set to -1 then will inherit value from learning_rate_schedule_steps
+steps: 200000 # If set to -1 then will inherit value from learning_rate_schedule_steps
 log_period: 100 # Flushes Tensorboard
 
 # We take inspiration from Llama2's learning rate (LR) schedule, see https://arxiv.org/pdf/2307.09288.pdf section 2.2
