@@ -73,13 +73,13 @@ def load_hf_model(model_size):
   """
   if model_size == "llama2-7b":
     model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-7b-hf")
-  if model_size == "llama2-7b":
+  elif model_size == "llama2-7b":
     model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-7b-hf")
-  if model_size == "llama3.1-8b":
+  elif model_size == "llama3.1-8b":
     model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
-  if model_size == "llama3.2-1b":
+  elif model_size == "llama3.2-1b":
     model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-3.2-1B-Instruct")
-  if model_size == "llama3.2-3b":
+  elif model_size == "llama3.2-3b":
     model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-3.2-3B-Instruct")
   elif model_size == "mistral-7b":
     model = MistralForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1")
