@@ -1180,7 +1180,7 @@ class Attention(nn.Module):
     return out_proj
 
   def apply_rotary_embedding(self, inputs: Array, inputs_positions: Array, name: str):
-    if self.config.model_name.startswith("llama3.1"):
+    if self.config.model_name.startswith("llama3.1") or self.config.model_name.startswith("llama3.2"):
       rotary_embedding = embeddings.LLaMARotaryEmbedding(
           min_timescale=self.config.rope_min_timescale,
           max_timescale=self.config.rope_max_timescale,
