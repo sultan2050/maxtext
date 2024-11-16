@@ -1,0 +1,1 @@
+JAX_PLATFORMS=cpu python3 MaxText/llama_mistral_mixtral_orbax_to_hf.py MaxText/configs/base.yml tokenizer_path=/home/big35manf/maxtext/Llama-3.1-8B-Instruct_tokenizer base_output_directory=gs://sultan_data/llama3.1_continue/ load_parameters_path=gs://sultan_data/llama3.1_continue_/30000/items/  model_name=llama3.1-8b hf_model_path=./llama3.1_30k
