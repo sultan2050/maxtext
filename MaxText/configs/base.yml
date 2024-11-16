@@ -292,14 +292,14 @@ train_data_column: 'text'
 eval_data_column: 'text'
 # dataset_type must be synthetic, hf, grain, tfds
 # details in: https://github.com/google/maxtext/blob/main/getting_started/Data_Input_Pipeline.md
-dataset_type: tfds
+dataset_type: hf
 # for TFDS input pipeline (dataset_type=tfds)
 dataset_path: "" # your path given as argument in download_dataset.sh, e.g. "gs://my-maxtext-dataset/"
-dataset_name: 'c4/en:3.0.1'
-eval_dataset_name: 'c4/en:3.0.1'
+dataset_name: ''
+eval_dataset_name: ''
 eval_split: 'validation'
 # for HuggingFace input pipeline (dataset_type=hf)
-hf_path: ''
+hf_path: 'parquet'
 hf_data_dir: ''
 hf_train_files: ''
 hf_eval_split: ''
