@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# model config for llama3.1-8b
+# model config for llama3.2-3b
 
-base_emb_dim: 4096
-base_num_query_heads: 32
+base_emb_dim: 3072
+base_num_query_heads: 24
 base_num_kv_heads: 8
-base_num_decoder_layers: 32
-base_mlp_dim: 14336
+base_num_decoder_layers: 28
+base_mlp_dim: 8192
 head_dim: 128
 mlp_activations: ["silu","linear"]
 vocab_size: 128256
